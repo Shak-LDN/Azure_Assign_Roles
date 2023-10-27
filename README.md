@@ -17,8 +17,6 @@ Assigning RBAC roles to Azure RGs
 
 Assigning RBAC roles (Users & Groups)
 
-Please contact **shakeel.ghani@bdo.co.uk** for any queries 
-
 ----------- In dev ---------------
 ### Folder Templates
 
