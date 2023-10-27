@@ -1,0 +1,27 @@
+---
+trigger:
+  - none
+pool:
+  vmImage: windows-latest
+parameters:
+  - name: subscription
+    displayName: Subscription
+    type: string
+    default:
+    values:
+      - SubscriptionHere
+stages: 
+  - stage: RBAC_Assignments
+    displayName: Provision RBAC Roles
+    jobs:
+    - job: Assigning_Roles
+      displayName: "job: Assinging RBAC Roles"
+      steps:
+        - task: AzurePowerShell@5
+          displayName: RBAC User Assignment
+          inputs:
+            azureSubscription: ${{ parameters.subscription }}
+            ScriptType: "FilePath"
+            ScriptPath: '$(System.DefaultWorkingDirectory)/PowerShell/RBAC_Users.ps1'
+            ScriptArguments: '-ImportCsv $(System.DefaultWorkingDirectory)/Users.csv'
+            azurePowerShellVersion: "LatestVersion"
