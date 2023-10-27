@@ -38,7 +38,6 @@ The following are located in the **[./PowerShell]** folder.
 
 ### Template Parameters
 
-The following Parameters must be specified for the [main.bicep](./main.bicep) template, were using variable groups within Azure Dev Ops-Library to state parameters:
 | Name | Type | Mandatory | Default Value | Description |
 | ---- | ---- | --------- | ------------- | ----------- |
 | location| string | No | Resource Group location | Azure location where the Azure Virtual Machine cluster will be created|
